@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Padaria Coração do Vale · Gaspar/SC · desde 1992</title>
+<meta name="description" content="Padaria tradicional no Centro de Gaspar, desde 1992. Pães, bolos, cucas e buffet de café da manhã, almoço e café da tarde. Seg a sex 6h30–20h, sáb 7h–18h.">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/padaria.css">
+<style>
+/* ===== Movimento (WolfStudio v3) — só roda com JS e sem "reduzir movimento" ===== */
+:root{--e:cubic-bezier(.2,.7,.2,1)}
+.anim :is(.fase-corpo>*,.encomendas>h2,.enc,.loja-topo,.galeria li,.comodidades li,.historia h2,.slogan,.anos li,.nota,.trechos li,.contato h2,.c-bloco){transition:opacity .7s var(--e) var(--d,0ms),translate .8s var(--e) var(--d,0ms),scale .8s var(--e) var(--d,0ms),rotate .8s var(--e) var(--d,0ms),transform .35s var(--e),box-shadow .35s,border-color .25s,background-color .25s}
+.anim :is(.fase-corpo>*,.encomendas>h2,.enc,.loja-topo,.galeria li,.comodidades li,.historia h2,.slogan,.anos li,.nota,.trechos li,.contato h2,.c-bloco):not(.in){opacity:0;translate:var(--tx,0px) var(--ty,22px);scale:var(--sc,1)}
+@keyframes sobe{from{opacity:0;translate:0 18px}}
+@keyframes gira{to{rotate:360deg}}
+@media print{.anim *{opacity:1!important;translate:none!important;scale:none!important;clip-path:none!important}}
+/* menu */
+.menu a{transition:background-color .2s}
+.menu a.on{background:var(--carvalho-claro)}
+.bt{transition:transform .2s var(--e),box-shadow .2s,background-color .2s}
+.bt:hover{transform:translateY(-2px)}
+/* hero: a linha 6h30 → 20h se estende e o cartão sobe */
+.hero-horas i{transform-origin:0 50%;animation:linha 1.4s var(--e) .2s both}
+@keyframes linha{from{scale:0 1}}
+.hero-cartao>*{animation:sobe .8s var(--e) both}
+.hero-cartao>:nth-child(2){animation-delay:.1s}.hero-cartao>:nth-child(3){animation-delay:.2s}.hero-cartao>:nth-child(4){animation-delay:.3s}
+.hero-foto{animation:sobe 1s var(--e) .25s both}
+/* encomendas */
+.enc img{transition:scale 1s var(--e)}
+.enc:hover img{scale:1.05}
+.enc:hover{transform:translateY(-5px)}
+.anim .enc{--ty:30px}
+/* história: os anos entram um a um */
+.anim .anos li{--ty:16px}
+.anim .comodidades li{--sc:.85;--ty:0px}
+.nota b{font-variant-numeric:tabular-nums}
+.c-bloco:hover{transform:translateY(-3px)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+<script>(function(d){if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion:reduce)').matches)d.classList.add('anim')})(document.documentElement)</script>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<p class="faixa-demo">Demonstração WolfStudio — não é o site oficial.</p>
+
+<header class="topo">
+  <div class="topo-linha">
+    <a class="marca" href="#inicio" aria-label="Padaria Coração do Vale, início">
+      <img src="assets/img/logo-oficial-pequeno.jpg" alt="" width="148" height="148" fetchpriority="high">
+      <span><strong>Coração do Vale</strong><small>padaria · desde 1992</small></span>
+    </a>
+    <nav class="menu" aria-label="Seções">
+      <a href="#manha">Manhã</a><a href="#almoco">Almoço</a><a href="#tarde">Tarde</a><a href="#encomendas">Encomendas</a><a href="#loja">A loja</a><a href="#contato">Contato</a>
+    </nav>
+    <a class="bt bt-vermelho bt-topo" href="https://wa.me/5547991461512?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20tenho%20uma%20d%C3%BAvida." target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+  <div class="regua" id="regua" data-estado="carregando">
+    <div class="regua-trilho" aria-hidden="true">
+      <span class="regua-aberto" id="regua-aberto"></span>
+      <span class="regua-marcador" id="marcador"><span class="regua-hora" id="marcador-hora"></span></span>
+    </div>
+    <div class="regua-rotulos" aria-hidden="true"><b>6h30</b><span>manhã</span><span>almoço</span><span>tarde</span><b>20h</b></div>
+    <p class="regua-status" id="status" aria-live="polite">Seg a sex 6h30–20h · sáb 7h–18h · dom fechado</p>
+  </div>
+</header>
+
+<main id="conteudo">
+  <section class="hero" id="inicio" aria-labelledby="titulo">
+    <p class="hero-horas" aria-hidden="true"><span>6h30</span><i></i><span>20h</span></p>
+    <div class="hero-grade">
+      <div class="hero-cartao">
+        <p class="selo">Loja nova desde abril de 2025</p>
+        <h1 id="titulo">Desde 1992, agora em casa nova.</h1>
+        <p>Café da manhã, almoço e café da tarde no Centro de Gaspar. Pães, bolos e cucas, do primeiro café até o fim da tarde.</p>
+        <div class="acoes">
+          <a class="bt bt-vermelho" href="https://wa.me/5547991461512?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20tenho%20uma%20d%C3%BAvida." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+          <a class="bt bt-branco" href="#manha">Ver o dia na padaria</a>
+        </div>
+      </div>
+      <figure class="hero-foto">
+        <img width="1500" height="1000" src="assets/img/fachada-nova-predio.jpg" alt="Fachada do prédio novo da Padaria Coração do Vale, com painel âmbar, logo sobre fundo vermelho e jardineira" fetchpriority="high">
+        <figcaption>R. Cel. Aristiliano Ramos, 199 · Centro · estacionamento conveniado em anexo</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="dia">
+    <section class="fase fase-manha" id="manha" aria-labelledby="t-manha">
+      <div class="fase-rotulo"><span class="fase-hora">6h30</span><span class="fase-nota">abre seg a sex · sáb às 7h</span></div>
+      <div class="fase-corpo">
+        <h2 id="t-manha">Manhã: o primeiro café</h2>
+        <p class="lead">Buffet de café da manhã, pães, bolos e cucas. Para tomar ali mesmo ou levar para casa.</p>
+        <blockquote class="trecho"><p>“Um ótimo lugar pra tomar um café, pãozinho bolo, cucas e muito mais...”</p><cite>destaque das avaliações no Google</cite></blockquote>
+        <div class="fotos fotos-manha">
+          <img loading="lazy" decoding="async" width="800" height="800" class="f-a" src="assets/img/cafe-latte-art.jpg" alt="Café com leite com desenho de folha na espuma, em xícara branca">
+          <img loading="lazy" decoding="async" width="600" height="1067" class="f-b" src="assets/img/prato-cafe-da-manha.jpg" alt="Prato de café da manhã servido na mesa da padaria">
+          <img loading="lazy" decoding="async" width="1250" height="825" class="f-c" src="assets/img/vitrine-curva-paes.jpg" alt="Vitrine curva iluminada com pães da padaria">
+        </div>
+      </div>
+    </section>
+
+    <section class="fase fase-almoco" id="almoco" aria-labelledby="t-almoco">
+      <div class="fase-rotulo"><span class="fase-hora fase-palavra">meio-dia</span><span class="fase-nota">horário do buffet: confirme no WhatsApp</span></div>
+      <div class="fase-corpo">
+        <h2 id="t-almoco">Almoço: buffet por quilo com proteínas na grelha</h2>
+        <p class="lead">No almoço o buffet é por quilo, com grelhados. Para saber o cardápio do dia, pergunte no WhatsApp.</p>
+        <div class="almoco-grade">
+          <img loading="lazy" decoding="async" width="1300" height="731" src="assets/img/salao-mesas-madeira.jpg" alt="Salão da loja nova com mesas e cadeiras de madeira, paredes vermelhas e brancas e o balcão ao fundo">
+          <div class="almoco-texto">
+            <blockquote class="trecho trecho-claro"><p>“Buffet por quilo com poucos pratos mas bem gostosos.”</p><cite>destaque das avaliações no Google</cite></blockquote>
+            <a class="bt bt-branco" href="https://wa.me/5547991461512?text=Ol%C3%A1!%20Qual%20%C3%A9%20o%20card%C3%A1pio%20do%20almo%C3%A7o%20hoje%3F" target="_blank" rel="noopener">Perguntar o cardápio do dia</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fase fase-tarde" id="tarde" aria-labelledby="t-tarde">
+      <div class="fase-rotulo"><span class="fase-hora fase-palavra">tarde</span><span class="fase-nota">até 20h seg a sex · 18h no sábado</span></div>
+      <div class="fase-corpo">
+        <h2 id="t-tarde">Tarde: tortas, salgados e chocolate quente</h2>
+        <p class="lead">O café da tarde também é buffet. Na vitrine, tortas, bolos e salgados; para acompanhar, café e chocolate quente.</p>
+        <ul class="fotos fotos-tarde" role="list">
+          <li><img loading="lazy" decoding="async" width="960" height="640" src="assets/img/fatias-torta-e-cafe.jpg" alt="Fatias de torta servidas com café em mesa de madeira"></li>
+          <li><img loading="lazy" decoding="async" width="800" height="1067" src="assets/img/torta-merengue.jpg" alt="Fatia de torta com cobertura de merengue tostado"></li>
+          <li><img loading="lazy" decoding="async" width="700" height="1050" src="assets/img/chocolate-quente-chantilly.jpg" alt="Copo de chocolate quente com chantilly"></li>
+          <li><img loading="lazy" decoding="async" width="700" height="1050" src="assets/img/vitrine-salgados.jpg" alt="Vitrine de salgados assados"></li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <section class="encomendas" id="encomendas" aria-labelledby="t-enc">
+    <h2 id="t-enc">Encomendas e campanhas</h2>
+    <div class="enc-grade">
+      <article class="enc enc-lancheira">
+        <img loading="lazy" decoding="async" width="540" height="960" src="assets/img/lancheira-dia-das-criancas.jpg" alt="Lancheira especial Padoca Lanche Feliz montada com lanches">
+        <div>
+          <p class="enc-tag">Dia das Crianças 2026</p>
+          <h3>Padoca Lanche Feliz</h3>
+          <p>Lancheira especial disponível só nos dias <strong>09, 10 e 12/10</strong>, com retirada na padaria ou entrega. Quantidades limitadas.</p>
+          <p class="enc-obs">Valor: consulte no WhatsApp.</p>
+          <a class="bt bt-vermelho" href="https://wa.me/5547991461512?text=Ol%C3%A1!%20Quero%20saber%20sobre%20a%20lancheira%20Padoca%20Lanche%20Feliz." target="_blank" rel="noopener">Perguntar sobre a lancheira</a>
+        </div>
+      </article>
+      <article class="enc enc-bolos">
+        <img loading="lazy" decoding="async" width="1000" height="667" src="assets/img/bolo-chocolate-morangos.jpg" alt="Bolo de chocolate com cobertura escorrida e morangos">
+        <div>
+          <p class="enc-tag">Bolos e tortas</p>
+          <h3>Vai ter festa?</h3>
+          <p>Encomendas de bolos e tortas, prazos e valores: a confirmar com a padaria. Mande a data e o que você precisa.</p>
+          <a class="bt bt-branco" href="https://wa.me/5547991461512?text=Ol%C3%A1!%20Queria%20encomendar%20um%20bolo%20ou%20torta%20para%20o%20dia%20___." target="_blank" rel="noopener">Consultar encomenda</a>
+        </div>
+      </article>
+      <article class="enc enc-festival">
+        <p class="enc-ano" aria-hidden="true">2026</p>
+        <div>
+          <p class="enc-tag">Festival Gastronômico de Gaspar 2026</p>
+          <h3>Sanduba de frango com dois cookies</h3>
+          <p>Foi o prato da padaria no festival da cidade, em março de 2026.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="loja" id="loja" aria-labelledby="t-loja">
+    <div class="loja-topo">
+      <h2 id="t-loja">A loja nova, na mesma rua</h2>
+      <p>Desde 24 de abril de 2025 a padaria funciona no prédio novo da Cel. Aristiliano Ramos. Role para o lado para ver.</p>
+    </div>
+    <ul class="galeria" role="list" tabindex="0" aria-label="Fotos da loja nova (role para o lado)">
+      <li><img loading="lazy" decoding="async" width="900" height="900" src="assets/img/vitrine-salgados-portal.jpg" alt="Vitrine de salgados e doces da loja nova"></li>
+      <li><img loading="lazy" decoding="async" width="700" height="933" src="assets/img/entrada-prateleira-embalados.jpg" alt="Prateleira de produtos embalados perto da entrada"></li>
+      <li><img loading="lazy" decoding="async" width="600" height="1067" src="assets/img/torta-frutas-mesa.jpg" alt="Torta de frutas servida na mesa"></li>
+      <li><img loading="lazy" decoding="async" width="600" height="1067" src="assets/img/estacionamento-anexo.jpg" alt="Estacionamento conveniado ao lado da padaria"></li>
+    </ul>
+    <ul class="comodidades" role="list">
+      <li>Estacionamento conveniado em anexo</li>
+      <li>Ar-condicionado e wi-fi</li>
+      <li>Cartões, dinheiro e Pix</li>
+      <li>Botão na mesa para chamar o atendente</li>
+    </ul>
+  </section>
+
+  <section class="historia" aria-labelledby="t-hist">
+    <h2 id="t-hist">Amilton e Lúcia, desde 1992</h2>
+    <p class="slogan">“Sabores que contam histórias”</p>
+    <ol class="anos" role="list">
+      <li><b>1992</b><span>Amilton Petters e Lúcia Hostert abrem a padaria em Gaspar.</span></li>
+      <li><b>2010</b><span>O Jornal Metas registra os 18 anos da casa e chama os dois de “casal empreendedor”.</span></li>
+      <li><b>2025</b><span>Em 24 de abril, a padaria muda para o prédio novo, na mesma rua.</span></li>
+      <li><b>2026</b><span>Participa do Festival Gastronômico de Gaspar.</span></li>
+    </ol>
+  </section>
+
+  <section class="avaliacoes" aria-labelledby="t-av">
+    <div class="nota"><b>4,7</b><span>★ no Google</span><small>1.139 avaliações</small></div>
+    <div>
+      <h2 id="t-av">O que dizem no Google</h2>
+      <ul class="trechos" role="list">
+        <li><blockquote><p>“adorei o botão na mesa para chamar o atendente”</p><cite>Andrei Schure Adriano, 5★, nov/2025</cite></blockquote></li>
+        <li><blockquote><p>“Lugar calmo com boa comida e pessoas simpática”</p><cite>destaque do Google</cite></blockquote></li>
+        <li><blockquote><p>“Ótima opção em Gaspar”</p><cite>Cleber JR, 5★, jul/2026</cite></blockquote></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="contato" id="contato" aria-labelledby="t-cont">
+    <h2 id="t-cont">Venha tomar um café</h2>
+    <div class="contato-grade">
+      <div class="c-bloco c-endereco">
+        <h3>Endereço</h3>
+        <p>R. Cel. Aristiliano Ramos, 199<br>Centro · Gaspar/SC · CEP 89110-067</p>
+        <p>Estacionamento conveniado em anexo.</p>
+        <a class="bt bt-branco" href="https://www.google.com/maps/search/?api=1&amp;query=Padaria%20Cora%C3%A7%C3%A3o%20do%20Vale%2C%20R.%20Cel.%20Aristiliano%20Ramos%2C%20199%2C%20Gaspar%20SC" target="_blank" rel="noopener">Abrir no mapa</a>
+      </div>
+      <div class="c-bloco c-horario">
+        <h3>Horário</h3>
+        <dl>
+          <div><dt>Seg a sex</dt><dd>6h30 às 20h</dd></div>
+          <div><dt>Sábado</dt><dd>7h às 18h</dd></div>
+          <div><dt>Domingo</dt><dd>fechado</dd></div>
+        </dl>
+        <p class="obs">Feriado de 12/10: horário a confirmar.</p>
+      </div>
+      <div class="c-bloco c-fale">
+        <h3>Fale com a padaria</h3>
+        <ul role="list">
+          <li><a href="https://wa.me/5547991461512?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20tenho%20uma%20d%C3%BAvida." target="_blank" rel="noopener">WhatsApp (47) 99146-1512</a></li>
+          <li><a href="tel:+554733321512">Fixo (47) 3332-1512</a></li>
+          <li><a href="mailto:padariacvale@gmail.com">padariacvale@gmail.com</a></li>
+          <li><a href="https://www.instagram.com/padariacoracaodovale/" target="_blank" rel="noopener">Instagram @padariacoracaodovale</a></li>
+          <li><a href="https://www.facebook.com/padariacoracaodovale" target="_blank" rel="noopener">Facebook /padariacoracaodovale</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <p><strong>Padaria Coração do Vale</strong> · Panificadora e Confeitaria Coração do Vale Ltda · CNPJ 82.914.854/0001-48</p>
+  <p>Demonstração feita por WolfStudio.</p>
+</footer>
+<script src="assets/js/padaria.js"></script>
+<script>
+/* Movimento (WolfStudio v3): revelar ao rolar, contadores e menu ativo. */
+(function(){
+  var R=document.documentElement; if(!R.classList.contains('anim')) return;
+  try{
+    var SEL='.fase-corpo>*,.encomendas>h2,.enc,.loja-topo,.galeria li,.comodidades li,.historia h2,.slogan,.anos li,.nota,.trechos li,.contato h2,.c-bloco', CNT='.nota b';
+    var io=new IntersectionObserver(function(es){
+      var n=0;
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        var el=e.target; io.unobserve(el);
+        if(n) el.style.setProperty('--d',Math.min(n,7)*90+'ms');
+        n++; el.classList.add('in');
+        setTimeout(function(){el.style.removeProperty('--d')},1700);
+      });
+    },{threshold:.08,rootMargin:'0px 0px -5% 0px'});
+    var pend=[].slice.call(document.querySelectorAll(SEL));
+    pend.forEach(function(el){io.observe(el)});
+    /* rolagem rápida pode pular um bloco: o que já ficou para cima aparece sem esperar */
+    var tv=0;
+    function varre(){pend=pend.filter(function(el){
+      if(el.classList.contains('in')) return false;
+      if(el.getBoundingClientRect().bottom<0){io.unobserve(el);el.classList.add('in');return false}
+      return true;
+    })}
+
+    function conta(el){
+      var tn=null;
+      [].some.call(el.childNodes,function(c){if(c.nodeType===3&&/\d,\d/.test(c.nodeValue)){tn=c;return true}});
+      if(!tn) return;
+      var full=tn.nodeValue, m=full.match(/(\d+),(\d)/), alvo=parseFloat(m[1]+'.'+m[2]), t0=null;
+      function f(t){
+        if(!t0) t0=t;
+        var p=Math.min(1,(t-t0)/1100), v=alvo*(1-Math.pow(1-p,3));
+        tn.nodeValue=p<1?full.replace(m[0],v.toFixed(1).replace('.',',')):full;
+        if(p<1) requestAnimationFrame(f);
+      }
+      requestAnimationFrame(f);
+    }
+    var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){cio.unobserve(e.target);conta(e.target)}})},{threshold:.6});
+    [].forEach.call(document.querySelectorAll(CNT),function(el){cio.observe(el)});
+
+    var links=[].slice.call(document.querySelectorAll('nav a[href^="#"]')), mapa={};
+    var sio=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(!e.isIntersecting) return;
+      links.forEach(function(a){a.classList.remove('on')}); mapa[e.target.id].classList.add('on');
+    })},{rootMargin:'-40% 0px -55% 0px'});
+    links.forEach(function(a){var s=document.getElementById(a.getAttribute('href').slice(1)); if(s&&s.id!=='conteudo'){mapa[s.id]=a;sio.observe(s)}});
+
+    var espera=false;
+    function rolar(){
+      espera=false; var y=window.scrollY||0;
+      R.classList.toggle('rolou',y>8);
+      clearTimeout(tv); if(pend.length) tv=setTimeout(varre,180);
+      if(y<160) links.forEach(function(a){a.classList.remove('on')});
+
+    }
+    window.addEventListener('scroll',function(){if(!espera){espera=true;requestAnimationFrame(rolar)}},{passive:true});
+    window.addEventListener('resize',rolar);
+    rolar();
+
+  }catch(err){R.classList.remove('anim')}
+})();
+</script>
+</body>
+</html>
